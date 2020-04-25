@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams, useRouteMatch } from 'react-router-dom';
+import MovieList from './MovieList';
+// import { useRouteMatch } from 'react-router-dom';
 
-const Movie = (props) => {
-  const params = useParams();
+
+  const Movie = (props) => {
   const [movie, setMovie] = useState();
  
   useEffect(() => {
-    console.log('params',params)
-    const id = 2;
+    console.log('props',props);
+    const id = props.match.params.id;
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
